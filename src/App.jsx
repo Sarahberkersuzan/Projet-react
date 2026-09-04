@@ -1,16 +1,24 @@
-const name = "Hedy Lamarr";
-function App() {
+import Profile from "./components/Profile";
+
+function User({age, name}) {
   return (
-  <div >
-    <h1>Hedy Lamarr's Todos</h1>
-    <img src="https://i.imgur.com/yXOvdOSs.jpg" alt="Hedy Lamarr" />
-    <ul>
-      <li>Invent new traffic lights</li>
-      <li>Rehearse a movie scene</li>
-      <li>Improve the spectrum technology</li>
-    </ul>
-  </div>
+    <div className="bg-amber-900 text-white p-4 m-4 rounded-lg">
+    <h2>{name}</h2>
+    <p>Age: {age}</p>
+    </div>
   );
 }
 
-export default App;
+
+function App() {
+ 
+  return (
+    <>
+    <User name="Dale Houston" age={30} />
+    <User name="Madge Murphy" age={25} />
+    <User name="Margaret Garner" age={28} />
+  </>
+  );
+}
+
+export default App
