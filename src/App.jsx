@@ -1,23 +1,20 @@
-import Profile from "./components/Profile";
-
-function User({age, name}) {
-  return (
-    <div className="bg-amber-900 text-white p-4 m-4 rounded-lg">
-    <h2>{name}</h2>
-    <p>Age: {age}</p>
-    </div>
-  );
-}
-
+import User from "./components/Profile";
+import data from "./data/data";
 
 function App() {
  
   return (
-    <>
-    <User name="Dale Houston" age={30} />
-    <User name="Madge Murphy" age={25} />
-    <User name="Margaret Garner" age={28} />
-  </>
+    <div className=" p-8 rounded-lg shadow-md mx-auto max-w-md bg-white">
+    <h1 className="text-2xl font-bold">Room</h1>
+    <p className="text-gray-400">5 people are around right now</p>
+    <ul className="flex flex-col space-y-4 mt-4">
+      {data.map((user) => (
+        <li key={user.id}>
+          <User name={user.name} Work={user.work} avatar={user.avatar} connected={user.connected} />
+        </li>
+      ))}
+    </ul>
+  </div>
   );
 }
 
