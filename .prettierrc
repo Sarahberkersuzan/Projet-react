@@ -1,0 +1,3 @@
+ in{
+  "plugins": ["prettier-plugin-tailwindcss"]
+}
